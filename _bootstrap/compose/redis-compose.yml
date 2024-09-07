@@ -1,0 +1,9 @@
+services:
+  redis:
+    image: redis
+    restart: always
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:

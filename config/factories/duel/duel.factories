@@ -1,0 +1,18 @@
+{
+    "cvars": {
+        "fraglimit": "0",
+        "g_itemHeight": "15",
+        "g_itemTimers": "0",
+        "pmove_BunnyHop": "0",
+        "pmove_CrouchStepJump": "0",
+        "pmove_JumpTimeDeltaMin": "50",
+        "pmove_WaterSwimScale": "0.5f",
+        "pmove_WaterWadeScale": "0.75f",
+        "timelimit": "10"
+    },
+    "author": "Quake Live Server Standards",
+    "description": "Community determined standard for Duel.",
+    "basegt": "duel",
+    "id": "stdduel",
+    "title": "Standard Duel"
+}

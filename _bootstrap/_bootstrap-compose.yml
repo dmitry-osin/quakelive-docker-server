@@ -1,0 +1,3 @@
+include:
+  - ./compose/redis-compose.yml
+  - ./compose/ca-compose.yml
