@@ -40,7 +40,7 @@ DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 TIME_FORMAT = "%H:%M:%S"
 
 # This code makes sure the required superclass is loaded automatically
-sys.path.append(os.path.dirname(os.path.expanduser("/root/Steam/steamapps/common/Quake Live Dedicated Server/minqlx-plugins/dependencies/iouonegirl.py")))
+sys.path.append(os.path.dirname(os.path.expanduser("/root/Steam/steamapps/common/qlds/minqlx-plugins/dependencies/iouonegirl.py")))
 from iouonegirl import iouonegirlPlugin
 
 VERSION = "v0.11.1"

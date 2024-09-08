@@ -2,3 +2,12 @@
 # The server will overwrite your changes on map exit and shutdown
 # 1 entry per line, format: steamid|(mod|admin|ban)
 # ex: 76561198072786081|ban
+
+76561199059080531|admin
+76561198076452037|admin
+76561198055140787|admin
+76561198019854038|admin
+76561198866624417|admin
+
+# Kicked me from server twice
+76561199697454642|ban

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-podman push aktivehatexxx/quakelive:24.04
+podman push ghcr.io/dmitry-osin/quakelive-docker-server:latest

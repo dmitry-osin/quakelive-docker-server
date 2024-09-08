@@ -1,0 +1,63 @@
+  {SERVICE_NAME}:
+    image: ghcr.io/dmitry-osin/quakelive-docker-server:latest
+    restart: always
+    ports:
+      - '{NET_PORT}:{NET_PORT}/udp'
+      - '{NET_PORT}:{NET_PORT}/tcp'
+      - '{RCON_PORT}:{RCON_PORT}'
+    labels:
+      autoheal-app: true
+    environment:
+      - NET_PORT={NET_PORT}
+      - ZMQ_STATS_PORT={NET_PORT}
+      - ZMQ_RCON_PORT={RCON_PORT}
+      - ZMQ_RCON_PASSWORD=${SERVER_RCON_PASSWORD}
+      - ZMQ_STATS_PASSWORD=${SERVER_STATS_PASSWORD}
+      - "SV_HOSTNAME=[FFA] [#{IDX}] ${SERVER_NAME_POSTFIX}"
+      - SV_TAGS=ffa, moscow, russia, aktivehatex
+      - SERVERSTARTUP=map almostlost stdffa
+      - QLX_MMDEFAULTMAP=almostlost stdffa
+      - QLX_MMCHECKTIME=60
+      - QLX_MMCHANGEWHENEMPTY=1
+      - SV_MAXCLIENTS=20
+      - SV_PRIVATECLIENTS=2
+      - SV_PRIVATEPASSWORD=${SERVER_PASSWORD}
+      - QLX_OWNER=${SERVER_OWNER}
+      - QLX_ELOLIMITMIN=0
+      - QLX_ELOLIMITMAX=3000
+      - QLX_ELOGAMESNEEDED=10
+      - COM_HUNKMEGS=96
+      - COM_ZONEMEGS=128
+      - QLX_ENFORCESTEAMNAME=0
+      - G_ALLOWVOTEMIDGAME=1
+      - G_VOTEFLAGS=0
+      - G_TIMEOUTCOUNT=3
+      - G_INACTIVITY=0
+      - SV_INCLUDECURRENTMAPINVOTE=1
+      - QLX_WORKSHOPREFERENCES=
+      - QLX_RESTARTTIME=06:00
+      - QLX_PINFODISPLAYAUTO=1
+      - QLX_SERVERBRANDNAME=${SERVER_BRAND_NAME}
+      - QLX_SERVERBRANDTOPFIELD=${SERVER_BRAND_TOP_FIELD}
+      - 'QLX_SERVERBRANDBOTTOMFIELD=Thank you for impact to QL community'
+      - 'QLX_LOADEDMESSAGE=Please be respectfull to each other'
+      - 'QLX_COUNTDOWNMESSAGE=Be good or be dead. GL & HF!'
+      - 'QLX_ENDOFGAMEMESSAGE=Good Game!'
+      - QLX_CONNECTMESSAGE=${SERVER_CONNECT_MESSAGE}
+      - QLX_SERVERS=${SERVER_IPS}
+      - QLX_BALANCEAPI=${SERVER_BALANCE_API}
+    volumes:
+      - './../../config/access.txt:/root/Steam/steamapps/common/qlds/baseq3/access.txt'
+      - './../../config/autoexec/ffa/autoexec.cfg:/root/Steam/steamapps/common/qlds/baseq3/autoexec.cfg'
+      - './../../config/server.cfg:/root/Steam/steamapps/common/qlds/baseq3/server.cfg'
+      - './../../config/factories/ffa/ffa.factories:/root/Steam/steamapps/common/qlds/baseq3/scripts/ffa.factories'
+      - './../../config/mappools/ffa/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
+      - './../../config/minqlx-plugins/common:/root/Steam/steamapps/common/qlds/minqlx-plugins'
+      - './../../config/workshop/ffa/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
+    depends_on:
+      - redis
+    healthcheck:
+      test: curl -f -LI http://0.0.0.0:9999 || exit 1
+      interval: 5m
+      timeout: 10s
+      retries: 5

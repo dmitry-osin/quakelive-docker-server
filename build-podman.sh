@@ -1,3 +1,3 @@
 #!/bin/sh
 
-podman build -t aktivehatexxx/quakelive:24.04 -f .\Dockerfile .
+podman build -t dmitry-osin/quakelive-docker-server:latest -f Dockerfile .
