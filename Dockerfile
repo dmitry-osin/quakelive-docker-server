@@ -121,10 +121,6 @@ CMD \
         && export QLX_PLUGINS=${QLX_PLUGINS:-$INSTALLED_QLX_PLUGINS} \
         # if QLX_BALANCEAPI is not set then set it to the default
         && export QLX_BALANCEAPI=${QLX_BALANCEAPI:-elo} \
-        # if QLX_ANTISPAMWARNINGTHRESHOLD is not set then set it to the default
-        && export QLX_ANTISPAMWARNINGTHRESHOLD=${QLX_ANTISPAMWARNINGTHRESHOLD:-20} \
-        # if QLX_ANTISPAMKICKTHRESHOLD is not set then set it to the default
-        && export QLX_ANTISPAMKICKTHRESHOLD=${QLX_ANTISPAMKICKTHRESHOLD:-30} \
         # start the minqlx extended quake live server
         && $QLDS_DIR/run_server_x64_minqlx.sh \
         # only attach a cvar parameter if the environment variable is set
@@ -158,17 +154,5 @@ CMD \
         ${QLX_COUNTDOWNMESSAGE:++set qlx_countdownMessage ${QLX_COUNTDOWNMESSAGE}} \
         ${QLX_ENDOFGAMEMESSAGE:++set qlx_endOfGameMessage ${QLX_ENDOFGAMEMESSAGE}} \
         ${QLX_CONNECTMESSAGE:++set qlx_connectMessage ${QLX_CONNECTMESSAGE}} \
-        ${QLX_ENFORCESTEAMNAME:++set qlx_enforceSteamName ${QLX_ENFORCESTEAMNAME}} \
-        ${QLX_MMDEFAULTMAP:++set qlx_mmDefaultMap ${QLX_MMDEFAULTMAP}} \
-        ${QLX_MMCHECKTIME:++set qlx_mmCheckTime ${QLX_MMCHECKTIME}} \
-        ${QLX_MMCHANGEWHENEMPTY:++set qlx_mmChangeWhenEmpty ${QLX_MMCHANGEWHENEMPTY}} \
-        ${QLX_ELOLIMITMIN:++set qlx_elo_limit_min ${QLX_ELOLIMITMIN}} \
-        ${QLX_ELOLIMITMAX:++set qlx_elo_limit_max ${QLX_ELOLIMITMAX}} \
-        ${QLX_ELOGAMESNEEDED:++set qlx_elo_games_needed ${QLX_ELOGAMESNEEDED}} \
-        ${QLX_RESTARTTIME:++set qlx_restartTime ${QLX_RESTARTTIME}} \
-        ${QLX_PINFODISPLAYAUTO:++set qlx_pinfo_display_auto ${QLX_PINFODISPLAYAUTO}} \
-        ${QLX_SERVERS:++set qlx_servers ${QLX_SERVERS}} \
         ${QLX_BALANCEAPI:++set qlx_balanceApi ${QLX_BALANCEAPI}} \
-        ${QLX_ANTISPAMWARNINGTHRESHOLD:++set qlx_antiSpamWarningThreshold ${QLX_ANTISPAMWARNINGTHRESHOLD}} \
-        ${QLX_ANTISPAMKICKTHRESHOLD:++set qlx_antiSpamKickThreshold ${QLX_ANTISPAMKICKTHRESHOLD}} \
         ${QLX_PLUGINS:++set qlx_plugins ${QLX_PLUGINS}}
