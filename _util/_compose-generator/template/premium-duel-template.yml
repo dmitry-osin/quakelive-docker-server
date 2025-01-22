@@ -1,4 +1,4 @@
-  {SERVICE_NAME}:
+  premium-{SERVICE_NAME}:
     image: ghcr.io/dmitry-osin/quakelive-docker-server:latest
     restart: always
     ports:
@@ -13,12 +13,13 @@
       - ZMQ_RCON_PORT={RCON_PORT}
       - ZMQ_RCON_PASSWORD=${SERVER_RCON_PASSWORD}
       - ZMQ_STATS_PASSWORD=${SERVER_STATS_PASSWORD}
-      - 'SV_HOSTNAME=[Premium Vampiric LG] [#{IDX}] [High Tickrate] ${SERVER_NAME_POSTFIX}'
-      - SV_TAGS=lg, aim, vampiric, moscow, russia, aktivehatex, premium
-      - SERVERSTARTUP=map drunkenmummy ca_mpql_vamp
-      - SV_MAXCLIENTS=20
+      - "SV_HOSTNAME=[Premium Duel] [#{IDX}] ${SERVER_NAME_POSTFIX} [High Tickrate]"
+      - SV_TAGS=duel, moscow, russia, aktivehatex
+      - SERVERSTARTUP=map bloodrun duel
+      - SV_MAXCLIENTS=8
       - SV_PRIVATECLIENTS=2
       - SV_PRIVATEPASSWORD=${SERVER_PASSWORD}
+      - G_PASSWORD=
       - QLX_OWNER=${SERVER_OWNER}
       - COM_HUNKMEGS=96
       - COM_ZONEMEGS=128
@@ -31,7 +32,7 @@
       - QLX_WORKSHOPREFERENCES=
       - QLX_SERVERBRANDNAME=${SERVER_BRAND_NAME}
       - QLX_SERVERBRANDTOPFIELD=${SERVER_BRAND_TOP_FIELD}
-      - 'QLX_SERVERBRANDBOTTOMFIELD=^1Premium Server'
+      - 'QLX_SERVERBRANDBOTTOMFIELD=^0Premium Server: ^1High Tickrate'
       - 'QLX_LOADEDMESSAGE=Please be respectful to each other'
       - 'QLX_COUNTDOWNMESSAGE=Be good or be dead. GL & HF!'
       - 'QLX_ENDOFGAMEMESSAGE=Good Game!'
@@ -39,11 +40,11 @@
       - QLX_BALANCEAPI=${SERVER_BALANCE_API}
     volumes:
       - './../../config/access.txt:/root/Steam/steamapps/common/qlds/baseq3/access.txt'
-      - './../../config/autoexec/va/autoexec.cfg:/root/Steam/steamapps/common/qlds/baseq3/autoexec.cfg'
+      - './../../config/autoexec/duel/autoexec.cfg:/root/Steam/steamapps/common/qlds/baseq3/autoexec.cfg'
       - './../../config/server.cfg:/root/Steam/steamapps/common/qlds/baseq3/server.cfg'
-      - './../../config/factories/va/va.factories:/root/Steam/steamapps/common/qlds/baseq3/scripts/va.factories'
-      - './../../config/mappools/va/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
+      - './../../config/factories/duel/duel.factories:/root/Steam/steamapps/common/qlds/baseq3/scripts/duel.factories'
+      - './../../config/mappools/duel/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
       - './../../config/minqlx-plugins/common:/root/Steam/steamapps/common/qlds/minqlx-plugins'
-      - './../../config/workshop/va/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
+      - './../../config/workshop/duel/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
     depends_on:
       - redis

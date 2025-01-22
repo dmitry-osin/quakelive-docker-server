@@ -2,7 +2,7 @@
 
 PYTHON_SCRIPT="generate-compose.py"
 
-SERVICE_COUNT=2
+SERVICE_COUNT=1
 SERVICE_TYPE=ffa
 START_FROM=27979
 TEMPLATE_FILE="template/${SERVICE_TYPE}-template.yml"

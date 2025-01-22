@@ -31,7 +31,7 @@
       - QLX_SERVERBRANDNAME=${SERVER_BRAND_NAME}
       - QLX_SERVERBRANDTOPFIELD=${SERVER_BRAND_TOP_FIELD}
       - 'QLX_SERVERBRANDBOTTOMFIELD=Thank you for impact to QL community'
-      - 'QLX_LOADEDMESSAGE=Please be respectfull to each other'
+      - 'QLX_LOADEDMESSAGE=Please be respectful to each other'
       - 'QLX_COUNTDOWNMESSAGE=Be good or be dead. GL & HF!'
       - 'QLX_ENDOFGAMEMESSAGE=Good Game!'
       - QLX_CONNECTMESSAGE=${SERVER_CONNECT_MESSAGE}
