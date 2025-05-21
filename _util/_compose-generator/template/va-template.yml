@@ -7,6 +7,9 @@
       - '{RCON_PORT}:{RCON_PORT}'
     labels:
       autoheal-app: true
+      ofelia.enabled: true
+      ofelia.job-exec.restart-daily.schedule: "${SERVER_RESTART_CRON}"
+      ofelia.job-exec.restart-daily.command: "docker restart {SERVICE_NAME}"
     environment:
       - NET_PORT={NET_PORT}
       - ZMQ_STATS_PORT={NET_PORT}
@@ -31,7 +34,7 @@
       - QLX_WORKSHOPREFERENCES=
       - QLX_SERVERBRANDNAME=${SERVER_BRAND_NAME}
       - QLX_SERVERBRANDTOPFIELD=${SERVER_BRAND_TOP_FIELD}
-      - 'QLX_SERVERBRANDBOTTOMFIELD=^1Premium Server'
+      - 'QLX_SERVERBRANDBOTTOMFIELD=${SERVER_BRAND_BOTTOM_FIELD}'
       - 'QLX_LOADEDMESSAGE=Please be respectful to each other'
       - 'QLX_COUNTDOWNMESSAGE=Be good or be dead. GL & HF!'
       - 'QLX_ENDOFGAMEMESSAGE=Good Game!'
@@ -45,5 +48,8 @@
       - './../../config/mappools/va/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
       - './../../config/minqlx-plugins/common:/root/Steam/steamapps/common/qlds/minqlx-plugins'
       - './../../config/workshop/va/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
+      - './../../logs/{SERVICE_NAME}:/root/Steam/steamapps/common/qlds/chatlogs'
     depends_on:
       - redis
+    networks:
+      - quakelive-network

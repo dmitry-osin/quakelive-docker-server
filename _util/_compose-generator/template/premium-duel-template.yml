@@ -7,17 +7,20 @@
       - '{RCON_PORT}:{RCON_PORT}'
     labels:
       autoheal-app: true
+      ofelia.enabled: true
+      ofelia.job-exec.restart-daily.schedule: "${SERVER_RESTART_CRON}"
+      ofelia.job-exec.restart-daily.command: "docker restart premium-{SERVICE_NAME}"
     environment:
       - NET_PORT={NET_PORT}
       - ZMQ_STATS_PORT={NET_PORT}
       - ZMQ_RCON_PORT={RCON_PORT}
       - ZMQ_RCON_PASSWORD=${SERVER_RCON_PASSWORD}
       - ZMQ_STATS_PASSWORD=${SERVER_STATS_PASSWORD}
-      - "SV_HOSTNAME=[Premium Duel] [#{IDX}] ${SERVER_NAME_POSTFIX} [High Tickrate]"
+      - 'SV_HOSTNAME=[Premium Duel] [#{IDX}] [High Tickrate] ${SERVER_NAME_POSTFIX}'
       - SV_TAGS=duel, moscow, russia, aktivehatex
       - SERVERSTARTUP=map bloodrun duel
-      - SV_MAXCLIENTS=8
-      - SV_PRIVATECLIENTS=2
+      - SV_MAXCLIENTS=16
+      - SV_PRIVATECLIENTS=4
       - SV_PRIVATEPASSWORD=${SERVER_PASSWORD}
       - G_PASSWORD=
       - QLX_OWNER=${SERVER_OWNER}
@@ -32,7 +35,7 @@
       - QLX_WORKSHOPREFERENCES=
       - QLX_SERVERBRANDNAME=${SERVER_BRAND_NAME}
       - QLX_SERVERBRANDTOPFIELD=${SERVER_BRAND_TOP_FIELD}
-      - 'QLX_SERVERBRANDBOTTOMFIELD=^0Premium Server: ^1High Tickrate'
+      - 'QLX_SERVERBRANDBOTTOMFIELD=${SERVER_BRAND_BOTTOM_FIELD}'
       - 'QLX_LOADEDMESSAGE=Please be respectful to each other'
       - 'QLX_COUNTDOWNMESSAGE=Be good or be dead. GL & HF!'
       - 'QLX_ENDOFGAMEMESSAGE=Good Game!'
@@ -46,5 +49,8 @@
       - './../../config/mappools/duel/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
       - './../../config/minqlx-plugins/common:/root/Steam/steamapps/common/qlds/minqlx-plugins'
       - './../../config/workshop/duel/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
+      - './../../logs/premium-{SERVICE_NAME}:/root/Steam/steamapps/common/qlds/chatlogs'
     depends_on:
       - redis
+    networks:
+      - quakelive-network

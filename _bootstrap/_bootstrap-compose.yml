@@ -1,10 +1,18 @@
 include:
   - ./compose/autoheal-compose.yml
   - ./compose/redis-compose.yml
+  - ./compose/ofelia-compose.yml
 #  - ./compose/va-compose.yml
-#  - ./compose/ca-compose.yml
+#  - ./compose/premium-duel-compose.yml
+#  - ./compose/private-duel-compose.yml
 #  - ./compose/duel-compose.yml
+#  - ./compose/ca-compose.yml
 #  - ./compose/tdm-compose.yml
 #  - ./compose/ffa-compose.yml
 #  - ./compose/ctf-compose.yml
 #  - ./compose/freeze-compose.yml
+
+networks:
+  quakelive-network:
+    external: true
+    name: quakelive-network

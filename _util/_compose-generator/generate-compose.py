@@ -31,6 +31,9 @@ def generate_docker_compose(service_count, game_mode, start_from, template_file,
                 file.write('\n')
             file.write(service)
             file.write('\n')
+        
+        # Networks are defined in the main bootstrap compose file
+        # No need to define them here to avoid conflicts
 
 
 if __name__ == "__main__":
