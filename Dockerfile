@@ -75,7 +75,7 @@ RUN set -x \
 RUN set -x \
     && mkdir $MINQLX_PLUGINS_DIR \
     && cd $MINQLX_PLUGINS_DIR \
-    && wget https://bootstrap.pypa.io/get-pip.py \
+    && wget https://bootstrap.pypa.io/pip/3.8/get-pip.py \
     && python3 $MINQLX_PLUGINS_DIR/get-pip.py \
     && rm $MINQLX_PLUGINS_DIR/get-pip.py \
     && git clone $MINQLX_PLUGINS_REPO_URL $MINQLX_PLUGINS_DIR \
