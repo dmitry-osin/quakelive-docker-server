@@ -19,8 +19,8 @@
       - 'SV_HOSTNAME=[Private Duel] [#{IDX}] [High Tickrate] ${SERVER_NAME_POSTFIX}'
       - SV_TAGS=duel, moscow, russia, aktivehatex
       - SERVERSTARTUP=map bloodrun duel
-      - SV_MAXCLIENTS=8
-      - SV_PRIVATECLIENTS=2
+      - SV_MAXCLIENTS=16
+      - SV_PRIVATECLIENTS=4
       - SV_PRIVATEPASSWORD=${SERVER_PASSWORD}
       - G_PASSWORD=${SERVER_G_PASSWORD}
       - QLX_OWNER=${SERVER_OWNER}
@@ -30,6 +30,7 @@
       - G_VOTEFLAGS=0
       - G_TIMEOUTCOUNT=3
       - G_INACTIVITY=0
+      - SV_FPS=120
       - SV_INCLUDECURRENTMAPINVOTE=1
       - QLX_WORKSHOPREFERENCES=
       - QLX_SERVERBRANDNAME=${SERVER_BRAND_NAME}
