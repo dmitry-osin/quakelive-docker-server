@@ -7,6 +7,9 @@
       - '{RCON_PORT}:{RCON_PORT}'
     labels:
       autoheal-app: true
+      ofelia.enabled: true
+      ofelia.job-exec.restart-daily.schedule: "${SERVER_RESTART_CRON}"
+      ofelia.job-exec.restart-daily.command: "docker restart {SERVICE_NAME}"
     environment:
       - NET_PORT={NET_PORT}
       - ZMQ_STATS_PORT={NET_PORT}

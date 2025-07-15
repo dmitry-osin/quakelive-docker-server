@@ -7,13 +7,16 @@
       - '{RCON_PORT}:{RCON_PORT}'
     labels:
       autoheal-app: true
+      ofelia.enabled: true
+      ofelia.job-exec.restart-daily.schedule: "${SERVER_RESTART_CRON}"
+      ofelia.job-exec.restart-daily.command: "docker restart {SERVICE_NAME}"
     environment:
       - NET_PORT={NET_PORT}
       - ZMQ_STATS_PORT={NET_PORT}
       - ZMQ_RCON_PORT={RCON_PORT}
       - ZMQ_RCON_PASSWORD=${SERVER_RCON_PASSWORD}
       - ZMQ_STATS_PASSWORD=${SERVER_STATS_PASSWORD}
-      - "SV_HOSTNAME=[FFA] [#{IDX}] ${SERVER_NAME_POSTFIX}"
+      - 'SV_HOSTNAME=[FFA] [#{IDX}] [High Tickrate] ${SERVER_NAME_POSTFIX}'
       - SV_TAGS=ffa, moscow, russia, aktivehatex
       - SERVERSTARTUP=map almostlost stdffa
       - SV_MAXCLIENTS=20

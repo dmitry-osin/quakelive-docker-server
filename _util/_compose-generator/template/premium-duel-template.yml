@@ -7,13 +7,16 @@
       - '{RCON_PORT}:{RCON_PORT}'
     labels:
       autoheal-app: true
+      ofelia.enabled: true
+      ofelia.job-exec.restart-daily.schedule: "${SERVER_RESTART_CRON}"
+      ofelia.job-exec.restart-daily.command: "docker restart premium-{SERVICE_NAME}"
     environment:
       - NET_PORT={NET_PORT}
       - ZMQ_STATS_PORT={NET_PORT}
       - ZMQ_RCON_PORT={RCON_PORT}
       - ZMQ_RCON_PASSWORD=${SERVER_RCON_PASSWORD}
       - ZMQ_STATS_PASSWORD=${SERVER_STATS_PASSWORD}
-      - "SV_HOSTNAME=[Premium Duel] [#{IDX}] ${SERVER_NAME_POSTFIX} [High Tickrate]"
+      - 'SV_HOSTNAME=[Premium Duel] [#{IDX}] [High Tickrate] ${SERVER_NAME_POSTFIX}'
       - SV_TAGS=duel, moscow, russia, aktivehatex
       - SERVERSTARTUP=map bloodrun duel
       - SV_MAXCLIENTS=8
