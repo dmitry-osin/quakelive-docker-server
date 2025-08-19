@@ -12,7 +12,7 @@ services:
     networks:
       - quakelive-network
     environment:
-      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-qwerty123}
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 30s

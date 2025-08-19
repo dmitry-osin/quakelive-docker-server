@@ -14,15 +14,16 @@ class rules_agreement(minqlx.Plugin):
         """Command handler for Russian rules"""
         
         rules_msg = (
-            "^0Правила сервера:\n"
-            "^7Отказ от ответственности: Администрация сервера не несет ответственности за любые технические неполадки, потерю данных или другие проблемы, возникающие во время игры.\n"
-            "^7Запрещено использование любых читов, ботов или модификаций, дающих преимущество в игре. Нарушение приведет к перманентному бану.\n"
-            "^7Оскорбления, токсичное поведение и любые формы дискриминации строго запрещены. Наказание: временный или перманентный бан.\n"
-            "^7Запрещено поднимать политические темы и вести политические дискуссии. Наказание: предупреждение/кик/бан.\n"
-            "^7Запрещено обсуждение религиозных тем и ведение религиозных споров. Наказание: предупреждение/кик/бан.\n"
-            "^7Оскорбление администрации сервера влечет за собой немедленный бан без предупреждения.\n"
-            "^7Запрещено использование нецензурной лексики в чрезмерных количествах.\n"
-            "^7Спам и флуд в чате запрещены. Наказание: мут/кик."
+            "^5 Правила сервера:\n"
+            "^7 - Отказ от ответственности: Администрация сервера не несет ответственности за любые технические неполадки, потерю данных или другие проблемы, возникающие во время игры.\n"
+            "\n"
+            "^7 - Запрещено использование любых читов, ботов или модификаций, дающих преимущество в игре. ^1Нарушение приведет к перманентному бану.\n"
+            "^7 - Оскорбления, токсичное поведение и любые формы дискриминации строго запрещены. ^1Наказание: временный или перманентный бан.\n"
+            "^7 - Запрещено поднимать политические темы и вести политические дискуссии. ^1Наказание: предупреждение/кик/бан.\n"
+            "^7 - Запрещено обсуждение религиозных тем и ведение религиозных споров. ^1Наказание: предупреждение/кик/бан.\n"
+            "^7 - Оскорбление администрации сервера влечет за собой немедленный бан без предупреждения.\n"
+            "^7 - Запрещено использование нецензурной лексики в чрезмерных количествах. ^1Наказание: мут/кик.\n"
+            "^7 - Спам и флуд в чате запрещены. ^1Наказание: мут/кик."
         )
         
         player.tell(rules_msg)
@@ -31,15 +32,16 @@ class rules_agreement(minqlx.Plugin):
         """Command handler for English rules"""
         
         rules_msg = (
-            "^0Server Rules:\n"
-            "^7Disclaimer: Server administration is not responsible for any technical issues, data loss, or other problems that may occur during gameplay.\n"
-            "^7The use of any cheats, bots, or modifications that provide advantages in the game is prohibited. Violation will result in a permanent ban.\n"
-            "^7Insults, toxic behavior, and any forms of discrimination are strictly prohibited. Punishment: temporary or permanent ban.\n"
-            "^7Discussing political topics and engaging in political debates is prohibited. Punishment: warning/kick/ban.\n"
-            "^7Discussion of religious topics and religious debates is prohibited. Punishment: warning/kick/ban.\n"
-            "^7Insulting server administrators results in an immediate ban without warning.\n"
-            "^7Excessive use of profanity is prohibited.\n"
-            "^7Spam and flood in chat are prohibited. Punishment: mute/kick."
+            "^5 Server Rules:\n"
+            "^7 - Disclaimer: Server administration is not responsible for any technical issues, data loss, or other problems that may occur during gameplay.\n"
+            "\n"
+            "^7 - The use of any cheats, bots, or modifications that provide advantages in the game is prohibited. ^1Violation will result in a permanent ban.\n"
+            "^7 - Insults, toxic behavior, and any forms of discrimination are strictly prohibited. ^1Punishment: temporary or permanent ban.\n"
+            "^7 - Discussing political topics and engaging in political debates is prohibited. Punishment: warning/kick/ban.\n"
+            "^7 - Discussion of religious topics and religious debates is prohibited. Punishment: warning/kick/ban.\n"
+            "^7 - Insulting server administrators results in an immediate ban without warning.\n"
+            "^7 - Excessive use of profanity is prohibited. ^1Punishment: mute/kick.\n"
+            "^7 - Spam and flood in chat are prohibited. ^1Punishment: mute/kick."
         )
         
         player.tell(rules_msg)
