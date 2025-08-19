@@ -47,7 +47,7 @@
       - './../../config/mappools/freeze/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
       - './../../config/minqlx-plugins/common:/root/Steam/steamapps/common/qlds/minqlx-plugins'
       - './../../config/workshop/freeze/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
-      - './../../logs/{SERVICE_NAME}:/root/Steam/steamapps/common/qlds/chatlogs'
+      - './../../logs/{SERVICE_NAME}:/root/.quakelive'
     depends_on:
       - redis
     networks:

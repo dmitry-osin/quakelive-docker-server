@@ -49,7 +49,7 @@
       - './../../config/mappools/duel/mappool.txt:/root/Steam/steamapps/common/qlds/baseq3/mappool.txt'
       - './../../config/minqlx-plugins/common:/root/Steam/steamapps/common/qlds/minqlx-plugins'
       - './../../config/workshop/duel/workshop.txt:/root/Steam/steamapps/common/qlds/baseq3/workshop.txt'
-      - './../../logs/premium-{SERVICE_NAME}:/root/Steam/steamapps/common/qlds/chatlogs'
+      - './../../logs/premium-{SERVICE_NAME}:/root/.quakelive'
     depends_on:
       - redis
     networks:
