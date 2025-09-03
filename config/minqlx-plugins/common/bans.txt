@@ -1,0 +1,15 @@
+# Bans file for Quake Live server
+# Each line should contain Steam ID of banned player
+# You can add comments after // or #
+
+# Supported Steam ID formats:
+# 76561198040982297 (64-bit format - recommended)
+
+# Banned players:
+76561198040982297
+76561199697454642
+76561197979882206
+76561198058805867
+76561198209599400
+76561198145531978
+76561198011367530
