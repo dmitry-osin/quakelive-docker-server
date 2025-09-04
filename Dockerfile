@@ -124,6 +124,7 @@ CMD \
         # start the minqlx extended quake live server
         && $QLDS_DIR/run_server_x64_minqlx.sh \
         # only attach a cvar parameter if the environment variable is set
+        ${SV_FPS:++set sv_fps ${SV_FPS}} \
         ${NET_PORT:++set net_port ${NET_PORT}} \
         ${ZMQ_RCON_PORT:++set zmq_rcon_port ${ZMQ_RCON_PORT}} \
         ${ZMQ_STATS_PORT:++set zmq_stats_port ${ZMQ_STATS_PORT}} \
@@ -132,7 +133,6 @@ CMD \
         ${SERVERSTARTUP:++set serverstartup ${SERVERSTARTUP}} \
         ${SV_HOSTNAME:++set sv_hostname ${SV_HOSTNAME}} \
         ${SV_TAGS:++set sv_tags ${SV_TAGS}} \
-        ${SV_FPS:++set sv_fps ${SV_FPS}} \
         ${SV_SERVERTYPE:++set sv_serverType ${SV_SERVERTYPE}} \
         ${G_PASSWORD:++set g_password ${G_PASSWORD}} \
         ${SV_MAXCLIENTS:++set sv_maxClients ${SV_MAXCLIENTS}} \
